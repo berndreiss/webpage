@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Bernd's Homepage</title>
+  <link rel="stylesheet" href="styles.css?v=2.0.7">
+  <script>
+    // Set theme immediately and body background
+    try {
+      const savedTheme = localStorage.getItem('theme');
+      const systemTheme = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+      const theme = savedTheme || systemTheme;
+      document.documentElement.setAttribute('data-theme', theme);
+      document.write('<style>body{background-color:' + (theme === 'light' ? '#ffffff' : '#1a1a1a') + '!important;}</style>');
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      document.write('<style>body{background-color:#1a1a1a!important;}</style>');
+    }
+  </script>
+  <style>
+    .contact-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    @media (min-width: 768px) {
+      .contact-cards {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    .contact-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px var(--shadow-color);
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+    }
+    
+    .contact-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 12px var(--shadow-color);
+      border-color: var(--link-color);
+      text-decoration: none;
+    }
+    
+    .contact-card.non-link {
+      cursor: default;
+    }
+    
+    .contact-card.non-link:hover {
+      cursor: pointer;
+    }
+    
+    .contact-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    
+    .contact-label {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: var(--link-color);
+      margin-bottom: 0.5rem;
+    }
+    
+    .contact-info {
+      font-size: 1rem;
+      color: var(--text-color);
+    }
+    
+    .contact-info a {
+      color: var(--link-color);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .contact-info a:hover {
+      color: var(--link-hover-color);
+      text-decoration: underline;
+    }
+    
+    .contact-info {
+      user-select: text;
+      -webkit-user-select: text;
+      -moz-user-select: text;
+      -ms-user-select: text;
+    }
+    
+    .selectable-text {
+      user-select: text;
+      -webkit-user-select: text;
+      -moz-user-select: text;
+      -ms-user-select: text;
+      cursor: text;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header will be inserted here by JavaScript -->
+  <div id="header-placeholder"></div>
+  
+  <!-- Main content -->
+  <main>
+    <div class="page-intro">
+      <h2>Contact me!</h2>
+      <p>You can find me in the following ways:</p>
+    </div>
+    
+    <div class="contact-cards">
+      <div class="contact-card">
+        <a href="mailto:bd_reiss@gmx.at" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1;"></a>
+        <div class="contact-icon">✉️</div>
+        <div class="contact-label">Email</div>
+        <div class="contact-info selectable-text" style="position: relative; z-index: 2;">bd_reiss@gmx.at</div>
+      </div>
+      
+      <div class="contact-card non-link" onclick="navigator.clipboard.writeText('bernd_re'); alert('Discord username copied to clipboard!')">
+        <div class="contact-icon">💬</div>
+        <div class="contact-label">Discord</div>
+        <div class="contact-info selectable-text">bernd_re</div>
+      </div>
+      
+      <div class="contact-card">
+        <a href="https://github.com/berndreiss" target="_blank" rel="noopener noreferrer" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1;"></a>
+        <div class="contact-icon">⚡</div>
+        <div class="contact-label">GitHub</div>
+        <div class="contact-info selectable-text" style="position: relative; z-index: 2;">berndreiss</div>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Your page content goes here -->
+      <p></p>
+    </div>
+  </main>
+  
+  <!-- Footer will be inserted here by JavaScript -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Load shared components -->
+  <script src="components.js?v=2.0.9"></script>
+</body>
+</html>

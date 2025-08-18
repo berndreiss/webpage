@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bernd's Homepage</title>
+  <link rel="stylesheet" href="styles.css?v=2.0.7">
+  <script>
+    // Set theme immediately and body background
+    try {
+      const savedTheme = localStorage.getItem('theme');
+      const systemTheme = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+      const theme = savedTheme || systemTheme;
+      document.documentElement.setAttribute('data-theme', theme);
+      document.write('<style>body{background-color:' + (theme === 'light' ? '#ffffff' : '#1a1a1a') + '!important;}</style>');
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      document.write('<style>body{background-color:#1a1a1a!important;}</style>');
+    }
+  </script>
+</head>
+<body>
+  <!-- Header will be inserted here by JavaScript -->
+  <div id="header-placeholder"></div>
+  
+  <!-- Main content -->
+  <main>
+    <div class="page-intro">
+      <h2>Hello!</h2>
+      <p>Welcome to my personal website! This homepage is under construction, but feel free to explore what's available.</p>
+    </div>
+    
+    <div class="container">
+      <h3>What you'll find here:</h3>
+      <ul>
+        <li><a href="postgres.html"><strong>Postgres:</strong></a> I like Open Source and sharing. Here you find a list of PostgreSQL resources and links I find helpful</li>
+        <li><a href="contact.html"><strong>Contact:</strong></a> Get in touch with me via email, Discord, or GitHub</li>
+      </ul>
+      
+      <p class="mt-2">
+        <em>More content coming soon! Visit again to see updates.</em>
+      </p>
+    </div>
+  </main>
+  
+  <!-- Footer will be inserted here by JavaScript -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Load shared components -->
+  <script src="components.js?v=2.0.9"></script>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Postgres Resources - Bernds Homepage</title>
+  <link rel="stylesheet" href="styles.css?v=2.0.7">
+  <script>
+    // Set theme immediately and body background
+    try {
+      const savedTheme = localStorage.getItem('theme');
+      const systemTheme = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+      const theme = savedTheme || systemTheme;
+      document.documentElement.setAttribute('data-theme', theme);
+      document.write('<style>body{background-color:' + (theme === 'light' ? '#ffffff' : '#1a1a1a') + '!important;}</style>');
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      document.write('<style>body{background-color:#1a1a1a!important;}</style>');
+    }
+  </script>
+  <style>
+    /* Page-specific styles for Postgres resources - uses CSS variables for dark mode */
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .category {
+      background-color: var(--card-bg);
+      color: var(--text-color);
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px var(--shadow-color);
+      border: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+    }
+    
+    .category:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px var(--shadow-color);
+    }
+    
+    .category h3 {
+      color: var(--link-color);
+      margin-top: 0;
+      border-bottom: 2px solid var(--link-color);
+      padding-bottom: 0.5rem;
+    }
+    
+    .category ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .category li {
+      margin: 0.8rem 0;
+      padding: 0.5rem;
+      background-color: var(--category-bg);
+      border-radius: 4px;
+      border-left: 3px solid var(--link-color);
+      transition: background-color 0.3s ease;
+    }
+    
+    .category a {
+      color: var(--link-color);
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    
+    .category a:hover {
+      text-decoration: underline;
+      color: var(--link-hover-color);
+    }
+    
+    .description {
+      font-size: 0.9rem;
+      color: var(--text-color);
+      opacity: 0.8;
+      margin-top: 0.3rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header will be inserted here by JavaScript -->
+  <div id="header-placeholder"></div>
+  
+  <!-- Main content -->
+  <main>
+    <div class="page-intro">
+      <h2>🐘 PostgreSQL Resources & Links</h2>
+      <p>Welcome to a collection of Postgres resources and articles I found helpful while learning. Feel free to browse, and (hopefully) find something useful</p>
+    </div>
+
+    <div class="categories">
+      <div class="category">
+        <h3>📚 Getting Started</h3>
+        <ul>
+          <li>
+            <a href="https://www.postgresql.org/docs/" target="_blank">Official Postgres Documentation</a>
+            <div class="description">The comprehensive official docs - your first stop for any Postgres question</div>
+          </li>
+          <li>
+            <a href="https://www.postgresql.org/docs/books/" target="_blank">Postgres Books</a>
+            <div class="description">Helpful books to get an in depth introduction</div>
+          </li>
+          <li>
+            <a href="https://www.postgresqltutorial.com/" target="_blank">Postgres Tutorial</a>
+            <div class="description">Step-by-step tutorials from basics to advanced topics</div>
+          </li>
+          <li>
+            <a href="https://www.postgresql.org/download/" target="_blank">Download Postgres</a>
+            <div class="description">Get PostgreSQL for your operating system</div>
+          </li>
+          <li>
+            <a href="https://pgexercises.com/" target="_blank">Postgres Exercises</a>
+            <div class="description">Interactive exercises to practice SQL and PostgreSQL features</div>
+          </li>
+          <li>
+            <a href="https://smartpostgres.com/posts/announcing-early-access-to-the-stack-overflow-sample-database-download-for-postgres/" target="_blank">Download the Stack Overflow Sample Database for Postgres</a>
+            <div class="description">If you want to play around with a real database setup, here, you find 6GB and 117GB dumps of the Stack Overflow database</div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <h3>🔧 Tools & Administration</h3>
+        <ul>
+          <li>
+            <a href="https://www.postgresql.org/docs/current/app-psql.html" target="_blank">psql Command Line</a>
+            <div class="description">Official command-line interface for PostgreSQL</div>
+          </li>
+          <li>
+            <a href="https://github.com/darold/pgFormatter" target="_blank">pgFormatter</a>
+            <div class="description">A tool to automatically format Postgres-specific SQL code</div>
+          </li>
+          <li>
+            <a href="https://www.pgadmin.org/" target="_blank">pgAdmin</a>
+            <div class="description">The most popular web-based Postgres administration tool</div>
+          </li>
+          <li>
+            <a href="https://dbeaver.io/" target="_blank">DBeaver</a>
+            <div class="description">Universal database tool with excellent Postgres support</div>
+          </li>
+          <li>
+            <a href="https://github.com/darold/pgbadger" target="_blank">pgbadger</a>
+            <div class="description">A tool to help analyze Postgres logs (including a cute mascot)</div>
+          </li>
+          <li>
+            <a href="https://pgtune.leopard.in.ua/" target="_blank">PGTune</a>
+            <div class="description">Calculate configuration for Postgres based on your hardware</div>
+          </li>
+          <li>
+            <a href="https://www.postgresql.org/docs/current/pgbench.html" target="_blank">pgbench</a>
+            <div class="description">Benchmark Postgres performance</div>
+            </li>
+          <li>
+            <a href="https://github.com/reorg/pg_repack" target="_blank">pg_repack</a>
+            <div class="description">"[A] PostgreSQL extension which lets you remove bloat from tables and indexes, and optionally restore the physical order of clustered indexes."</div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <h3>⚡ Performance & Optimization</h3>
+        <ul>
+          <li>
+            <a href="https://byteofdev.com/posts/tuning-postgres-intro/" target="_blank">A Quick(ish) Introduction (July, 2025)</a>
+              <div class="description">Performance tuning is hard. This introduction by Jacob Jackson makes it easier</div>
+          </li>
+          <li>
+            <a href="https://medium.com/@crushby/basic-postgresql-configuration-on-linux-660/cbce4c7b8" target="_blank">Basic PostgreSQL Configuration on Linux (Oct, 2023)</a>
+            <div class="description">This article by Aliaksei Kirkouski delivers insights into real world Postgres deployment on Linux</div>
+          </li>
+          <li> 
+            <a href="https://severalnines.com/blog/benchmarking-postgresql-performance/" target="_blank">How to Benchmark PostgreSQL (May, 2022)</a>
+            <div class="description">Learn how to measure and quantify performance with pgbench</div>
+          </li>
+          <li>
+            <a href="https://byteofdev.com/posts/making-postgres-slow/" target="_blank">Making Postgres 42,000x slower (July, 2025)</a>
+            <div class="description">How slow can you make Postgres? An article by Jacob Jackson exploring performance tuning by shifting the perspective</div>
+          </li>
+          <li>
+            <a href="https://querysharp.com/blog/how-to-optimize-like-queries-postgresql" target="_blank">How to Optimise PostgreSQL LIKE and ILIKE Queries for Blazing-Fast Searches (July 2025)</a>
+            <div class="description">This article talks about ways you can effectively index for searches using like and ilike</div>
+          </li>
+          <li>
+            <a href="https://stackoverflow.com/questions/1566717/postgresql-like-query-performance-variations/13452528#13452528" target="_blank">PostgreSQL LIKE query performance variations (Nov. 2012)</a>
+              <div class="description">This Stack Overflow post by Erwin Brandstetter discusses optimal scenarios for different indexes when it comes to wildcards</div>
+          </li>
+          <li>
+            <a href="https://www.cybertec-postgresql.com/en/per-tablespace-storage-parameters/" target="_blank">Per-tablespace storage parameters (Oct. 2013)</a>
+            <div class="description">Article by Hans-Jürgen Schönig about making use of tablespaces to 'trick' the optimizer in better handling tables expected to be uncached</div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <h3>☁️ Backup and Recovery</h3>
+        <ul>
+          <li>
+            <a href="https://www.cybertec-postgresql.com/en/pg_basebackup-creating-self-sufficient-backups/" target="_blank">pg_basebackup: Creating self-sufficient backups (Dec. 2016)</a>
+            <div class="description">Article by Hans-Jürgen Schönig on how to use pg_basebackup effectively.</div>
+          </li>
+          <li>
+            <a href="https://www.enterprisedb.com/blog/why-postgresql-17s-incremental-backup-feature-game-changer" target="_blank">Why PostgreSQL 17's Incremental Backup Feature is a Game-Changer (August 2024)</a>
+            <div class="description">Article discussing the advantages of incremental backups introduced in Postgres 17. It also introduces the backup tool 'Barman'</div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <h3>🌐 Community & Learning</h3>
+        <ul>
+          <li>
+            <a href="https://postgresweekly.com/" target="_blank">Postgres Weekly</a>
+            <div class="description">Newsletter with curated articles delivered by Peter Cooper since 2013. Get the most important Postgres news, you won't regret signing up</div>
+          </li>
+          <li>
+            <a href="https://www.cybertec-postgresql.com/en/postgresql-blog/" target="_blank">CYBERTEC Blog</a>
+            <div class="description">A treasure trove of exciting articles on various Postgres topics</div>
+          </li>
+          <li>
+            <a href="https://talkingpostgres.com/" target="_blank">Talking Postgres</a>
+            <div class="description">Podcast by Claire Giordano discussing the human side of Postgres</div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <h3>🚀 Advanced Topics</h3>
+        <ul>
+          <li>
+            <a href="https://stackoverflow.com/questions/2966524/calculating-and-saving-space-in-postgresql/7431468#7431468" target="_blank">Column Tetris (Sep. 2011)</a>
+            <div class="description">This Stack Overflow post by Erwin Brandstetter discusses economic column design</div>
+          </li>
+          <li>
+            <a href="https://www.crunchydata.com/blog/how-your-postgresql-data-model-affects-storage" target="_blank">PostgreSQL Deep Dive: How Your Data Model Affects Storage (Feb. 2019)</a>
+            <div class="description">An article by Jon Conway discussing how switching to a denormalized array-based approach can sometimes be superior to parent-detail tables</div>
+          </li>
+          <li>
+            <a href="https://pganalyze.com/blog/postgresql-vs-sql-server-btree-index-deduplication#:~:text=Both%20PostgreSQL%20and%20Microsoft%20SQL,in%20subtle%20but%20important%20ways" target="_blank">Postgres vs. SQL Server: B-Tree Index Differences & the Benefit of Deduplication (April 2025)</a>
+            <div class="description">An article by Lukas Fittl discussing the implementation of B-Trees in Postgres and its implications</div>
+          </li>
+          <li>
+            <a href="" target="_blank"></a>
+            <div class="description"></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  
+  <!-- Footer will be inserted here by JavaScript -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Load shared components -->
+  <script src="components.js?v=2.0.9"></script>
+</body>
+</html>

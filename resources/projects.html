@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects - Bernd's Homepage</title>
+  <link rel="stylesheet" href="styles.css?v=2.0.7">
+  <script>
+    // Set theme immediately and body background
+    try {
+      const savedTheme = localStorage.getItem('theme');
+      const systemTheme = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+      const theme = savedTheme || systemTheme;
+      document.documentElement.setAttribute('data-theme', theme);
+      document.write('<style>body{background-color:' + (theme === 'light' ? '#ffffff' : '#1a1a1a') + '!important;}</style>');
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      document.write('<style>body{background-color:#1a1a1a!important;}</style>');
+    }
+  </script>
+  <style>
+    /* Add any page-specific styles here */
+  </style>
+</head>
+<body>
+  <!-- Header will be inserted here by JavaScript -->
+  <div id="header-placeholder"></div>
+  
+  <!-- Main content -->
+  <main>
+    <div class="page-intro">
+      <h2>Projects</h2>
+      <p>Coming soon!</p>
+    </div>
+
+    <div class="container">
+      <!-- Your page content goes here -->
+      <p></p>
+    </div>
+  </main>
+  
+  <!-- Footer will be inserted here by JavaScript -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Load shared components -->
+  <script src="components.js?v=2.0.9"></script>
+</body>
+</html>
