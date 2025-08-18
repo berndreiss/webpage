@@ -30,11 +30,28 @@
     .category {
       background-color: var(--card-bg);
       color: var(--text-color);
-      padding: 1.5rem;
       border-radius: 8px;
       box-shadow: 0 2px 4px var(--shadow-color);
       border: 1px solid var(--border-color);
       transition: all 0.3s ease;
+      max-height: 600px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .category-header {
+      padding: 1rem 1rem 0 1rem;
+      background-color: var(--card-bg);
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+    
+    .category-content {
+      padding: 0 1rem 1rem 1rem;
+      overflow-y: auto;
+      flex: 1;
     }
     
     .category:hover {
@@ -96,8 +113,11 @@
 
     <div class="categories">
       <div class="category">
-        <h3>📚 Getting Started</h3>
-        <ul>
+        <div class="category-header">
+          <h3>📚 Getting Started</h3>
+        </div>
+        <div class="category-content">
+          <ul>
           <li>
             <a href="https://www.postgresql.org/docs/" target="_blank">Official Postgres Documentation</a>
             <div class="description">The comprehensive official docs - your first stop for any Postgres question</div>
@@ -122,12 +142,16 @@
             <a href="https://smartpostgres.com/posts/announcing-early-access-to-the-stack-overflow-sample-database-download-for-postgres/" target="_blank">Download the Stack Overflow Sample Database for Postgres</a>
             <div class="description">If you want to play around with a real database setup, here, you find 6GB and 117GB dumps of the Stack Overflow database</div>
           </li>
-        </ul>
+          </ul>
+        </div>
       </div>
 
       <div class="category">
-        <h3>🔧 Tools & Administration</h3>
-        <ul>
+        <div class="category-header">
+          <h3>🔧 Tools & Administration</h3>
+        </div>
+        <div class="category-content">
+          <ul>
           <li>
             <a href="https://www.postgresql.org/docs/current/app-psql.html" target="_blank">psql Command Line</a>
             <div class="description">Official command-line interface for PostgreSQL</div>
@@ -160,11 +184,15 @@
             <a href="https://github.com/reorg/pg_repack" target="_blank">pg_repack</a>
             <div class="description">"[A] PostgreSQL extension which lets you remove bloat from tables and indexes, and optionally restore the physical order of clustered indexes."</div>
           </li>
-        </ul>
+          </ul>
+        </div>
       </div>
 
       <div class="category">
-        <h3>⚡ Performance & Optimization</h3>
+        <div class="category-header">
+          <h3>⚡ Performance & Optimization</h3>
+        </div>
+        <div class="category-content">
         <ul>
           <li>
             <a href="https://byteofdev.com/posts/tuning-postgres-intro/" target="_blank">A Quick(ish) Introduction (July, 2025)</a>
@@ -194,11 +222,15 @@
             <a href="https://www.cybertec-postgresql.com/en/per-tablespace-storage-parameters/" target="_blank">Per-tablespace storage parameters (Oct. 2013)</a>
             <div class="description">Article by Hans-Jürgen Schönig about making use of tablespaces to 'trick' the optimizer in better handling tables expected to be uncached</div>
           </li>
-        </ul>
+          </ul>
+        </div>
       </div>
 
       <div class="category">
-        <h3>☁️ Backup and Recovery</h3>
+        <div class="category-header">
+          <h3>☁️ Backup and Recovery</h3>
+        </div>
+        <div class="category-content">
         <ul>
           <li>
             <a href="https://www.cybertec-postgresql.com/en/pg_basebackup-creating-self-sufficient-backups/" target="_blank">pg_basebackup: Creating self-sufficient backups (Dec. 2016)</a>
@@ -208,11 +240,15 @@
             <a href="https://www.enterprisedb.com/blog/why-postgresql-17s-incremental-backup-feature-game-changer" target="_blank">Why PostgreSQL 17's Incremental Backup Feature is a Game-Changer (August 2024)</a>
             <div class="description">Article discussing the advantages of incremental backups introduced in Postgres 17. It also introduces the backup tool 'Barman'</div>
           </li>
-        </ul>
+          </ul>
+        </div>
       </div>
 
       <div class="category">
-        <h3>🌐 Community & Learning</h3>
+        <div class="category-header">
+          <h3>🌐 Community & Learning</h3>
+        </div>
+        <div class="category-content">
         <ul>
           <li>
             <a href="https://postgresweekly.com/" target="_blank">Postgres Weekly</a>
@@ -226,11 +262,15 @@
             <a href="https://talkingpostgres.com/" target="_blank">Talking Postgres</a>
             <div class="description">Podcast by Claire Giordano discussing the human side of Postgres</div>
           </li>
-        </ul>
+          </ul>
+        </div>
       </div>
 
       <div class="category">
-        <h3>🚀 Advanced Topics</h3>
+        <div class="category-header">
+          <h3>🚀 Advanced Topics</h3>
+        </div>
+        <div class="category-content">
         <ul>
           <li>
             <a href="https://stackoverflow.com/questions/2966524/calculating-and-saving-space-in-postgresql/7431468#7431468" target="_blank">Column Tetris (Sep. 2011)</a>
@@ -248,7 +288,8 @@
             <a href="" target="_blank"></a>
             <div class="description"></div>
           </li>
-        </ul>
+          </ul>
+        </div>
       </div>
     </div>
   </main>
