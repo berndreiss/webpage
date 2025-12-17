@@ -487,10 +487,17 @@
             html += '<div class="results-count">Showing ' + wordsToShow.length + ' of ' + totalWords + ' words</div>';
           }
 
+          // Add button container for proper layout
+          html += '<div style="display: flex; gap: 0.5rem; justify-content: center; margin-top: 1rem;">';
+
           // Add "Load More" button if there are more results for this number
           if (result.displayedCount < totalWords) {
             html += '<button class="load-more-btn" onclick="loadMoreResults(' + resultIndex + ')">Load More Results</button>';
           }
+
+          // Add "Clear" button for this number
+          html += '<button class="load-more-btn" style="background-color: #666; margin: 0;" onclick="clearResult(' + resultIndex + ')">Clear</button>';
+          html += '</div>';
         } else {
           html += '<div class="no-results">No matching words found.</div>';
         }
@@ -529,6 +536,20 @@
           }
         }
       });
+    }
+
+    // Clear result for a specific number
+    function clearResult(resultIndex) {
+      // Remove this result from the array
+      currentResults.splice(resultIndex, 1);
+
+      // Re-render all results
+      if (currentResults.length === 0) {
+        const resultsDiv = document.getElementById('results');
+        resultsDiv.innerHTML = '';
+      } else {
+        displayResults(null);
+      }
     }
 
     // Handle form submission
