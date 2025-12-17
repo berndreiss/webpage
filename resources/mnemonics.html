@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mnemonic Word Finder - Bernd's Homepage</title>
-  <link rel="stylesheet" href="styles.css?v=2.0.10">
+  <link rel="stylesheet" href="styles.css?v=2.0.11">
   <script>
     // Set theme immediately and body background
     try {
@@ -222,7 +222,7 @@
   <div id="footer-placeholder"></div>
 
   <!-- Load shared components -->
-  <script src="components.js?v=2.0.10"></script>
+  <script src="components.js?v=2.0.11"></script>
 
   <!-- Load word list -->
   <script src="words.js"></script>
@@ -364,6 +364,9 @@
         } else {
           resultsDiv.innerHTML = '<div class="no-results">No results found.</div>';
         }
+
+        // Scroll to results
+        resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
       } catch (error) {
         resultsDiv.innerHTML = '<div class="error-message">Error: ' + error.message + '</div>';
       } finally {
