@@ -488,11 +488,11 @@
           }
 
           // Add button container for proper layout
-          html += '<div style="display: flex; gap: 0.5rem; justify-content: center; margin-top: 1rem;">';
+          html += '<div style="display: flex; gap: 0.5rem; justify-content: center; align-items: center; margin-top: 1rem;">';
 
           // Add "Load More" button if there are more results for this number
           if (result.displayedCount < totalWords) {
-            html += '<button class="load-more-btn" onclick="loadMoreResults(' + resultIndex + ')">Load More Results</button>';
+            html += '<button class="load-more-btn" style="margin: 0;" onclick="loadMoreResults(' + resultIndex + ')">Load More Results</button>';
           }
 
           // Add "Clear" button for this number
