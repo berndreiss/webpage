@@ -20,6 +20,7 @@ const SiteComponents = {
       <a href="index.html" class="nav-link" data-page="home">Home</a>
       <a href="about.html" class="nav-link" data-page="about">About</a>
       <a href="projects.html" class="nav-link" data-page="projects">Projects</a>
+      <a href="mnemonics.html" class="nav-link" data-page="mnemonics">Mnemonics</a>
       <a href="postgres.html" class="nav-link" data-page="postgres">Postgres</a>
       <a href="contact.html" class="nav-link" data-page="contact">Contact</a>
       <div class="mobile-theme-toggle">
