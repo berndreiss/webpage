@@ -384,7 +384,7 @@
 
     // Build regex pattern from number
     function buildPattern(number) {
-      const vowels = '[aeiou]*';
+      const vowels = '[aeiouy]*';
       let pattern = '^' + vowels;
 
       for (let digit of number) {
@@ -409,7 +409,7 @@
       const matches = wordList.filter(word => {
         if (!regex.test(word)) return false;
         // Exclude words with no vowels (abbreviations like "tv", "www", etc.)
-        return /[aeiou]/i.test(word);
+        return /[aeiouy]/i.test(word);
       });
       console.log('Matches found:', matches.length);
 
